@@ -25,7 +25,7 @@ object corefunctions1 {
    
      val rdd2 = rddsplit.filter(x => x(7) == "California" && x(8) == "cash")
      val rdd3 = rdd2.map(x => x(3).toDouble)
-     
+     // cache n persist RDD
      rdd3.cache()
      rdd3.unpersist()
      rdd3.persist(org.apache.spark.storage.StorageLevel.MEMORY_AND_DISK)
